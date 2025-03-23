@@ -18,5 +18,11 @@ namespace MBA.Loja.Business.Models
 
         public int VendedorId { get; private set; }
         public Vendedor Vendedor { get; private set; }
+
+        public bool AdicionarProduto( string nome, string descricao, decimal preco, int estoque)
+        {
+
+        }
+
     }
 }
