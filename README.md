@@ -31,7 +31,7 @@ O projeto consiste em:
   - ASP.NET Core Identity
   - JWT (JSON Web Token) para autenticação na API
 - **Front-end:**
-  - Razor Pages/Views
+  - Asp Net MVC
   - HTML/CSS para estilização básica
 - **Documentação da API:** Swagger
 
