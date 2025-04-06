@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBA.Loja.Business.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,15 @@ namespace MBA.Loja.Business.Models
 {
     public class Vendedor : Entity
     {
-        public string Nome { get; private set; }
-        public string Email { get; private set; }
-        public string Telefone { get; private set; }
-        public string Documento { get; private set; } 
-        public DateTime DataCadastro { get; private set; } = DateTime.UtcNow;
-        public bool Ativo { get; private set; } = false;
+        public string Nome { get;  set; }
+        public string Email { get;  set; }
+        public string Telefone { get;  set; }
+        public string Documento { get;  set; } 
+        public DateTime DataCadastro { get;  set; } = DateTime.UtcNow;
+        public bool Ativo { get;  set; } = false;
+        public EnumDocumento TipoDocumento { get; set; }
+
+        public IEnumerable<Produto> Produtos { get; set; }
 
 
 
