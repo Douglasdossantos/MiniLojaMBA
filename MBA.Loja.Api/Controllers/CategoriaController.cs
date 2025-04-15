@@ -11,10 +11,10 @@ namespace MBA.Loja.Api.Controllers
         public CategoriaController(){}
 
         [HttpGet]
-        public async Task<IEnumerable<CategoriaViewModel>> ObterTodos()
-        {
-            return Ok();
-        }
+        //public async Task<IEnumerable<CategoriaViewModel>> ObterTodos()
+        //{
+        //    return Ok();
+        //}
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<CategoriaViewModel>> ObterPorId( Guid id)

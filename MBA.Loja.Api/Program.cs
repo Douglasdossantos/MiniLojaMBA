@@ -1,3 +1,4 @@
+using MBA.Loja.Api.Configuration;
 using MBA.Loja.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,10 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+ 
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig).Assembly);
+
+builder.Services.ResolveDependecias();
 
 var app = builder.Build();
 

@@ -11,9 +11,12 @@ namespace MBA.Loja.Api.Controllers
         public VendedorController()
         {            
         }
-        public async Task<IEnumerable<VendedorController>> ObterTodos()
-        {
-        }
+
+        //[HttpGet]
+        //public async Task<IEnumerable<VendedorController>> ObterTodos()
+        //{
+        //    return  Ok();
+        //}
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<VendedorController>> ObterPorId(Guid id)
