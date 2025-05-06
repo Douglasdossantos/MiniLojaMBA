@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MBA.Loja.App.ViewModels.Categoria.CategoriaViewModel>
+@{
+    ViewData["Title"] = "Categoria";
+}
+
+<h1>Todas Categorias</h1>
+<p>
+    <a class="btn btn-primary" asp-controller="Categoria" asp-action="Create">
+        <span class="fa fa-plus"></span>Cadastrar Categoria
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#detalhesModal" data-id="@item.Id" data-nome="@item.Nome" ><spam class="fa fa-search"></spam></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

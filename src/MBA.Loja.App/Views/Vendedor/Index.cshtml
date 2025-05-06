@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MBA.Loja.App.ViewModels.Vendedor.VendedorViewModel>
+@{
+    ViewData["Title"] = "Vendedor";
+}
+
+<h1>Todos os Produtos</h1>
+<p>
+    <a class="btn btn-primary" asp-controller="Vendedor" asp-action="Create">
+        <span class="fa fa-plus"></span>Cadastrar produto
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" @(item.Ativo ? "checked" : "") />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#detalhesModal"  data-id="@item.Id" data-nome="@item.Nome"><spam class="fa fa-search"></spam></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

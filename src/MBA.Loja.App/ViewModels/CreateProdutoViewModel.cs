@@ -1,0 +1,34 @@
+﻿using MBA.Loja.App.ViewModels.Categoria;
+using MBA.Loja.App.ViewModels.Vendedor;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
+
+namespace MBA.Loja.App.ViewModels
+{
+    public class CreateProdutoViewModel
+    {
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(200, MinimumLength = 3, ErrorMessage = "O campo {0} precisa conter {2} há {1} caracteres")]
+        public string? Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(200, MinimumLength = 3, ErrorMessage = "O campo {0} precisa conter {2} há {1} caracteres")]
+        public string? Descricao { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public decimal? Preco { get; set; }
+        public int Estoque { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public bool Ativo { get; set; }
+        public string? Imagem { get; set; }
+        public IFormFile? ImagemUpload { get; set; }
+
+        public IEnumerable<SelectListItem>? Vendedores { get; set; }
+
+        public IEnumerable<SelectListItem>? Categorias { get; set; }
+
+        public Guid VendedorId { get; set; }
+
+        public Guid CategoriaId { get; set; }
+    }
+}
