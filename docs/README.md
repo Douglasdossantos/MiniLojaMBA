@@ -74,7 +74,7 @@ A estrutura do projeto é organizada da seguinte forma:
 
 2. **Configuração do Banco de Dados:**
    - o projeto inicialmente deve rodar em modo de desenvolvimento junto com o SqLite, porem caso foor rodar em outro hambiente precisarar seguir outra configuração 
-   - em outro modo (fora o de desenvolvimento) será preciso alterar o arquivo `appsettings.json`, configure a string de conexão do SQL Server.
+   - em outro modo (fora o de desenvolvimento), será preciso alterar o arquivo `appsettings.json`, configure a string de conexão do SQL Server.
    - verifique se o projeto MBA.Loja.Api e o MBA.Loja.App está configurado para inicializar juntos
    - Rode o projeto para que a configuração do Seed crie o banco e popule com os dados básicos
 
