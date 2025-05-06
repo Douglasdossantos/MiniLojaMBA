@@ -26,10 +26,11 @@ O projeto consiste em:
   - ASP.NET Core MVC
   - ASP.NET Core Web API
   - Entity Framework Core
-- **Banco de Dados:** SQL Server
+- **Banco de Dados:** SQL Server/SQLite
 - **Autenticação e Autorização:**
   - ASP.NET Core Identity
   - JWT (JSON Web Token) para autenticação na API
+  - foi disponibilizado um usuario para teste o email: teste@teste.com e a sua senha Teste@123
 - **Front-end:**
   - Razor Pages/Views
   - HTML/CSS para estilização básica
@@ -41,17 +42,18 @@ A estrutura do projeto é organizada da seguinte forma:
 
 
 - src/
-  - Blog.Web/ - Projeto MVC
-  - Blog.Api/ - API RESTful
-  - Blog.Data/ - Modelos de Dados e Configuração do EF Core
+  - MBA.Loja.App/ - Projeto MVC
+  - MBA.Loja.Api/ - API RESTful
+  - MBA.Loja.Business - Regras  de negocio e validações 
+  - MBA.Loja.Data/ - Modelos de Dados e Configuração do EF Core
 - README.md - Arquivo de Documentação do Projeto
 - FEEDBACK.md - Arquivo para Consolidação dos Feedbacks
 - .gitignore - Arquivo de Ignoração do Git
 
 ## **5. Funcionalidades Implementadas**
 
-- **CRUD para Posts e Comentários:** Permite criar, editar, visualizar e excluir posts e comentários.
-- **Autenticação e Autorização:** Diferenciação entre usuários comuns e administradores.
+- **CRUD para Posts e Comentários:** Permite criar, atualizar, editar e visualizar Produtos, Vendedores e categoria.
+- **Autenticação e Autorização:** Diferenciação entre usuários.
 - **API RESTful:** Exposição de endpoints para operações CRUD via API.
 - **Documentação da API:** Documentação automática dos endpoints da API utilizando Swagger.
 
@@ -60,40 +62,36 @@ A estrutura do projeto é organizada da seguinte forma:
 ### **Pré-requisitos**
 
 - .NET SDK 8.0 ou superior
-- SQL Server
+- SQL Server/SqLite
 - Visual Studio 2022 ou superior (ou qualquer IDE de sua preferência)
 - Git
 
 ### **Passos para Execução**
 
 1. **Clone o Repositório:**
-   - `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
-   - `cd nome-do-repositorio`
+   - `git clone https://github.com/Douglasdossantos/MiniLojaMBA.git`
+   - acesso o diretório que acabou de clonar -> MiniLojaMBA, dentro dele deve existir um arquivo -> MiniLojaMBA.sln, abra o mesmos preferencialmente com o Visual studio 2022 ou superior
 
 2. **Configuração do Banco de Dados:**
-   - No arquivo `appsettings.json`, configure a string de conexão do SQL Server.
+   - o projeto inicialmente deve rodar em modo de desenvolvimento junto com o SqLite, porem caso foor rodar em outro hambiente precisarar seguir outra configuração 
+   - em outro modo (fora o de desenvolvimento) será preciso alterar o arquivo `appsettings.json`, configure a string de conexão do SQL Server.
+   - verifique se o projeto MBA.Loja.Api e o MBA.Loja.App está configurado para inicializar juntos
    - Rode o projeto para que a configuração do Seed crie o banco e popule com os dados básicos
 
 3. **Executar a Aplicação MVC:**
-   - `cd src/Blog.Mvc/`
-   - `dotnet run`
-   - Acesse a aplicação em: http://localhost:5000
+   - Acesse a aplicação em: https://localhost:7111/
 
 4. **Executar a API:**
-   - `cd src/Blog.Api/`
-   - `dotnet run`
-   - Acesse a documentação da API em: http://localhost:5001/swagger
+   - Acesse a documentação da API em: https://localhost:7152/swagger/index.html
 
 ## **7. Instruções de Configuração**
-
-- **JWT para API:** As chaves de configuração do JWT estão no `appsettings.json`.
 - **Migrações do Banco de Dados:** As migrações são gerenciadas pelo Entity Framework Core. Não é necessário aplicar devido a configuração do Seed de dados.
 
 ## **8. Documentação da API**
 
 A documentação da API está disponível através do Swagger. Após iniciar a API, acesse a documentação em:
 
-http://localhost:5001/swagger
+https://localhost:7152/swagger/index.html
 
 ## **9. Avaliação**
 
